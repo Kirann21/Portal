@@ -4,17 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create or Join Meeting</title>
-    <link rel="stylesheet" href="public/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
     <link rel="stylesheet" href="public/Assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+ 
+      .dropdown-menu .start-instant {
+        border-top: 1px solid rgba(130, 151, 206, 0.5);  
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: #f1f1f1;  
+        color: rgba(130, 151, 206, 1); 
+      }
+
+ 
+      .dropdown-menu .dropdown-item {
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .dropdown-menu .dropdown-item i {
+        margin-right: 10px;
+      }
+    </style>
 </head>
+
+
 <body style="padding-top:4.2rem;
     background-color:  rgba(241, 240, 254, 1);">
    <nav class="navbar navbar-expand-md fixed-top">
     <img src="./public/Assets/images/imageedit_4_8493716304.png"
     class ="logo" alt="">
     <a href="#" class ="navbar-brand text-dark"></a>
+     
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -32,21 +56,23 @@
                 <a href="#" class="nav-link" id="sign-in">Sign in</a>
             </li>
             <li class="nav-item">
-               <button class ="btn btn-outline-secondary
-               btn-lg text-custom font-weight-bold join-meeting">Join the meeting</button>     
+               <button class="btn btn-outline-secondary btn-lg text-custom font-weight-bold join-meeting">Join the meeting</button>     
             </li>
-            <li class="nav-item">
-                <button class ="btn btn-custom1
-                 btn-lg font-weight-bold new-meeting">Start a meeting</button>     
+            <li class="nav-item dropdown">
+                <button class="btn btn-custom1 btn-lg font-weight-bold dropdown-toggle" id="newMeetingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Start a Meeting
+                </button>
+
             </li>
         </ul>            
     </div>
    </nav>
    <main>
-    <div class="jumbotron h-100 d-flex" style="background-image: url('./public/Assets/images/Frame 1.png');background-size:contain;">
-        <div class ="container w-50">
-            <h3 style="padding-top:30px">
-                Video calls so smooth,they're practically magic.</h3>
+
+    <div class="jumbotron h-100 d-flex" style="background-image: url('./public/Assets/images/Frame 1.png'); background-size: contain;">
+        <div class="container w-50">
+            <h3 style="padding-top: 30px">Video calls so smooth, they're practically magic.</h3>
+          
             <div class="wrapper">
              <div class="static-txt">It's Portal for</div>
              <ul class="dynamic-txts">
@@ -56,67 +82,93 @@
                  <li><span>YOU!</span></li>
              </ul>
              </div>
-           <p style="color:#93969b">
-            Forget the clicks,gesture controls will help you to feel the flow.
-            Point,pinch and connect. We make video calling as natural as waving.
+
+           <p style="color: #93969b">
+            Forget the clicks, gesture controls will help you to feel the flow.
+            Point, pinch, and connect. We make video calling as natural as waving.
            </p>
-           <ul class="display-center justify-content-start"style="padding-top:20px;">
-            <li style="padding:0;">
-                <button class="btn text-light display-center font-weight-bold new-meeting"style="background-color:rgba(130, 151, 206, 1);padding:12px">
-                <span class="material-icons mr-2"style="color:white">video_call</span>New Meeting</button>
+           <ul class="display-center justify-content-start" style="padding-top: 20px;">
+            <li style="padding: 0;">
+                <!-- New Meeting button -->
+                <button class="btn text-light display-center font-weight-bold dropdown-toggle" id="newMeetingDropdown" data-toggle="dropdown" style="background-color: rgba(130, 151, 206, 1); padding: 12px">
+                    <span class="material-icons mr-2" style="color: white">video_call</span>New Meeting
+                </button>
+                <div class="dropdown-menu" aria-labelledby="newMeetingDropdown">
+                    <a class="dropdown-item create-later" href="#"><i class="fa-solid fa-link"></i>Create a meeting for later</a>
+                    <a class="dropdown-item start-instant" href="#"><i class="fa-solid fa-plus"></i>Start an instant meeting</a>
+                </div>
             </li>
-            <li style="padding:0 0 0 20px;">
-                <button class="btn text-dark font-weight-bold 
-                display-center"style="background-color: rgba(241, 240, 254, 1);padding:15px">
-                <span class="material-icons mr-2"style="color:black">keyboard</span>
-                <input type="text" placeholder="Enter a Code" class="enter-code"></button>
+            <li style="padding: 0 0 0 20px;">
+                <button class="btn text-dark font-weight-bold display-center" style="background-color: rgba(241, 240, 254, 1); padding: 15px">
+                    <span class="material-icons mr-2" style="color: black">keyboard</span>
+                    <input type="text" placeholder="Enter a Code" class="enter-code">
+                </button>
             </li>
+         
             <li class="pl-4 font-weight-bold text-dark cursor-pointer pl-2 join-action">Join</li>
            </ul>
         </div>
         <div class="container w-50">
-            <img src="./public/Assets/images/network.png.rm.png" class="signin-image" alt="pic" >
+
+            <img src="./public/Assets/images/network.png.rm.png" class="signin-image" alt="pic">
         </div>
     </div>    
    </main>
-   <footer class="container dis-foot"><h6>Learn more about<span style="color:rgba(130, 151, 206, 1)"> Portal</span>.</h6>
+   <footer class="container dis-foot">
+     <h6>Learn more about <span style="color: rgba(130, 151, 206, 1)">Portal</span>.</h6>
    </footer>
+
+   <!-- Add the required Bootstrap and jQuery scripts -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
    <script>
   $(document).ready(function() {
-  // Focus on the code input when 'Join the meeting' is clicked
-  $(".join-meeting").on("click", function() {
-    $(".enter-code").focus();
-  });
+    // Focus on the code input when 'Join the meeting' is clicked
+    $(".join-meeting").on("click", function() {
+      $(".enter-code").focus();
+    });
 
-  // Handle the 'Join' action
-  $(".join-action").on("click", function() {
-    let join_value = $('.enter-code').val().trim(); // Get the input value and trim whitespace
-    if (join_value) { // Check if the input is not empty
-      let meeting_url = "pre-join.html?meetingID=" + encodeURIComponent(join_value); // Correct concatenation
-      window.open(meeting_url,'_blank'); // Redirect to the meeting URL
+    // Handle the 'Join' action
+    $(".join-action").on("click", function() {
+      let join_value = $('.enter-code').val().trim(); // Get the input value and trim whitespace
+      if (join_value) { // Check if the input is not empty
+        let meeting_url = "pre-join.html?meetingID=" + encodeURIComponent(join_value); // Correct concatenation
+        window.open(meeting_url, '_blank'); // Redirect to the meeting URL
 
-      // Clear the input field after the join action
-      $('.enter-code').val(''); // Clear the input field
-    } else {
-      alert("Please enter a valid meeting code."); // Alert if the input is empty
-    }
-  });
-});
-$(document).ready(function() {
-  $(".new-meeting").on("click", function() {
-      let eigth_digit_value = Math.floor(Math.random()*100000000);
-      let new_meeting_url = "pre-join.html?meetingID=" + encodeURIComponent(eigth_digit_value); // Correct concatenation
-      window.open(new_meeting_url, '_blank');
-    })
-  });
-  const signInButton = document.querySelector('#sign-in');
+        // Clear the input field after the join action
+        $('.enter-code').val(''); // Clear the input field
+      } else {
+        alert("Please enter a valid meeting code."); // Alert if the input is empty
+      }
+    });
+
+    // Handle 'Create a meeting for later' option
+    $(".create-later").on("click", function() {
+      let eigth_digit_value = Math.floor(Math.random() * 100000000);  // Generate a random 8-digit value
+      let new_meeting_url = "pre-join.html?meetingID=" + encodeURIComponent(eigth_digit_value); 
+      alert("Meeting created for later: " + new_meeting_url);
+      // You can store this meeting ID for later use
+    });
+
+    // Handle 'Start an instant meeting' option
+    $(".start-instant").on("click", function() {
+      let eigth_digit_value = Math.floor(Math.random() * 100000000);  // Generate a random 8-digit value
+      let new_meeting_url = "pre-join.html?meetingID=" + encodeURIComponent(eigth_digit_value);
+      window.open(new_meeting_url, '_blank');  // Open the meeting instantly
+    });
+
+    // Redirect to the sign-in page
+    const signInButton = document.querySelector('#sign-in');
+          
     signInButton.addEventListener('click', (event) => {
         event.preventDefault();  // Prevent default form submission
         window.location.href = 'sign-up.html';  
     });
-   
-   </script>
+  });
+  </script>
 
 </body>
-</html> 
+</html>
+
