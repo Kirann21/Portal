@@ -1,0 +1,60 @@
+<script>
+
+    index 
+    
+    $(function(){
+  const urlParams = new URLSearchParams(window.location.search);
+  let meeting_id = urlParams.get('meetingID');
+  
+  // Prompt user for user ID
+  let user_id = window.prompt("Enter your User ID");
+  
+  // Check if user_id is entered and meeting_id is valid
+  if (user_id && meeting_id) {
+    // Initialize meeting and display meeting container
+    $("#meetingContainer").show();
+    Myapp._init(user_id, meeting_id);
+  } else if(!user_id){
+    window.prompt("Enter valid user ID");
+  }
+  else if (!meeting_id) {
+    // If there's no meeting ID, redirect to action.html
+    window.location.href = './action.html';
+  }
+});
+
+  </script>
+
+  -------------------------------------------
+  action 
+
+  $(document).ready(function() {
+    // Focus on the code input when 'Join the meeting' is clicked
+    $(".join-meeting").on("click", function() {
+      $(".enter-code").focus();
+    });
+  
+    // Handle the 'Join' action
+    $(".join-action").on("click", function() {
+      let join_value = $('.enter-code').val().trim(); // Get the input value and trim whitespace
+      if (join_value) { // Check if the input is not empty
+        let meeting_url = window.location.origin + "?meetingID=" + encodeURIComponent(join_value); // Correct concatenation
+        window.open(meeting_url,'_blank'); // Redirect to the meeting URL
+  
+        // Clear the input field after the join action
+        $('.enter-code').val(''); // Clear the input field
+      } else {
+        alert("Please enter a valid meeting code."); // Alert if the input is empty
+      }
+    });
+  });
+  $(document).ready(function() {
+    $(".new-meeting").on("click", function() {
+        let eigth_digit_value = Math.floor(Math.random()*100000000);
+        let new_meeting_url = window.location.origin + "?meetingID=" + encodeURIComponent(eigth_digit_value); // Correct concatenation
+        window.open(new_meeting_url, '_blank');
+      })
+    });
+  
+     </script>
+  

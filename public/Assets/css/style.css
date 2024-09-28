@@ -1,12 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /*overflow-x: hidden;  Prevent horizontal scrolling */
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+}
 
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
  body{
     font-family: 'Poppins', sans-serif !important;
     font-size: large;
+
  }
 ul{
     list-style: none;
     margin: 0;
+    padding: 0;
 }
  .logo{
     height: 68px;
@@ -18,9 +37,9 @@ ul{
  }
 
  .nav-item a{
-    color: #fe733e !important;
+    color: rgba(31, 47, 106, 1)  !important;
     font-size: 16px;
-    padding: 14px 0 10px;
+    padding:  0 10px;
 
  }
 
@@ -35,23 +54,245 @@ ul{
  }
 
  .btn-custom{
-    background-color: #fe733e;
+    background-color:rgba(31, 47, 106, 1);
  }
  
 .text-custom{
-    color:black;
+    color:rgba(31, 47, 106, 1);
 }
 
 .btn-custom1{
-    background-color: black;
-    color:#fe733e;
+    background-color:#000000;
+    color:#ffffff;
  }
  .btn-custom1:hover {
-    color: white; /* Text color changes to white on hover */
+    color:rgba(130, 151, 206, 1); /* Text color changes to white on hover */
 }
 
 .signin-image{
-    height: 390px;
-    border: 25px sloid white;
+    height: 375px;
 }
 
+textarea:focus, input:focus{
+   outline: none !important;
+}
+
+.cursor-pointer{
+   cursor: pointer;
+}
+
+.wrapper{
+   display: flex;
+ }
+ .wrapper .static-txt{
+   color: #000000;
+   font-size: 40px;
+   font-weight: 400;
+ }
+ .wrapper .dynamic-txts{
+   margin-left: 15px;
+   height: 60px;
+   line-height: 60px;
+   overflow: hidden;
+ }
+ .dynamic-txts li{
+   list-style: none;
+   color: rgba(31, 47, 106, 1);
+   font-size: 40px;
+   position: relative;
+   top: 0;
+   animation: slide 12s steps(4) infinite;
+ }
+ @keyframes slide {
+   100%{
+     top: -240px;
+   }
+ }
+ .dynamic-txts li span{
+   position: relative;
+   margin:0;
+ }
+ .dynamic-txts li span::after{
+   content: "";
+   position: absolute;
+   left:0;
+   height: 100%;
+   width: 100%;
+   background: rgba(241, 240, 254, 1);
+   border-left: 2px solid rgba(227, 198, 138, 1);
+   animation: typing 3s steps(10) infinite;
+ }
+ @keyframes typing {
+   40%, 60%{
+     left: calc(100% + 30px);
+   }
+   100%{
+     left: 0;
+   }
+ }
+ .enter-code {
+  padding: 10px 10px; /* Adjust padding for better spacing */
+  border: 2px solid rgba(31, 47, 106, 1); /* Base border color */
+  border-radius: 5px; /* Rounded corners */
+  background:  white; /* White background */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+  font-size: 16px; /* Font size for better readability */
+}
+
+/* Change border and add shadow on focus */
+.enter-code:focus {
+  border-color:rgba(227, 198, 138, 1); /* Change border color on focus */
+  box-shadow: 0 0 8px rgba(227, 198, 138, 1); /* Glow effect */
+}
+
+
+ /* Global box-sizing to prevent padding/margin issues */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Basic body and layout settings */
+body {
+  font-size: large;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Define fixed size for icons to prevent shifting */
+.top-left-participant-wrap, .top-left-chat-wrap, .top-left-time-wrap, 
+.present-now-wrap, .option-wrap {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth hover transition */
+  border-radius: 10px;
+}
+
+/* Hover effects without layout shift */
+.ccursor-pointer:hover {
+  background-color: aliceblue; /* Background color change */
+  transform: scale(1.05); /* Slight scale on hover */
+  cursor: pointer;
+}
+.ccc-pointer:hover{
+  cursor: pointer;
+}
+/* Style for video container */
+.video-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+}
+
+.g-top {
+  position: relative;
+  height: 90vh;
+}
+
+.g-top-left {
+  position: absolute;
+  right: 0;
+  height: 8vh;
+  top: 0;
+  border-bottom-left-radius: 10px;
+}
+
+/* Define fixed size for video and other elements */
+.video-wrap > * {
+  flex: 1 1 250px;
+  border: 1px solid white;
+}
+
+.g-bottom {
+  height: 10vh;
+}
+
+/* Bottom action buttons */
+.action-icon-style {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 10px;
+  border: 1px solid rgba(241, 240, 254, 1); /* Square bordered icons */
+}
+
+/* Updated hover style with the orange background */
+.mic-toggle-wrap:hover, .end-call-wrap:hover, .video-toggle-wrap:hover, .option-wrap:hover, .ccursor-pointer:hover {
+  border-radius: 10px;
+  background-color: rgba(139, 155, 215, 1); /* Orange soft background */
+  transform: scale(1.1); /* Slight scale on hover */
+  cursor: pointer;
+}
+
+/* Wrapper styles */
+.home-wrap {
+  background-color: rgba(241, 240, 254, 1);
+}
+
+/* Updated Meeting Details Button Style */
+.meeting-details-buttons {
+  color:rgba(241, 240, 254, 1);
+  font-weight: normal;
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 8px 12px;
+  border-radius: 5px; /* Slight rounding */
+  background-color: transparent; /* Default background */
+  transition: background-color 0.3s , transform 0.3s;
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Vertically align text and icon */
+  justify-content: center; /* Center content horizontally */
+  gap: 5px; /* Space between text and arrow icon */
+}
+
+.meeting-details-buttons:hover {
+  color:rgba(31, 47, 106, 1);
+  background-color: rgba(241, 240, 254, 1); /* Soft background color on hover */
+}
+
+/* Container to ensure button stays inside the screen */
+.bottom-left {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+}
+
+/* Present Now container for horizontal alignment and proper hover */
+.present-now-wrap {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px; /* Padding to cover the full button area */
+  gap: 5px; /* Gap between icon and text */
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 10px;
+}
+
+.present-now-wrap:hover {
+  color: rgba(139, 155, 215, 1); /* Apply background to entire container */
+  transform: scale(1.05);
+}
+
+/* Align the three action icons (mic, end call, camera) to have square borders */
+.action-icon-style span {
+  font-size: 24px;
+}
+
+.bg-light {
+  background-color:rgba(31, 47, 106, 1)!important;
+}
+
+.my-icon {
+  color: rgba(241, 240, 254, 1); /* Your desired color */
+}
