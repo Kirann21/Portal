@@ -30,10 +30,15 @@
       }
     </style>
 </head>
-<body style="padding-top:4.2rem; background-color: rgba(241, 240, 254, 1);">
+
+
+<body style="padding-top:4.2rem;
+    background-color:  rgba(241, 240, 254, 1);">
    <nav class="navbar navbar-expand-md fixed-top">
-    <img src="./public/Assets/images/imageedit_4_8493716304.png" class="logo" alt="">
-    <a href="#" class="navbar-brand text-dark"></a>
+    <img src="./public/Assets/images/imageedit_4_8493716304.png"
+    class ="logo" alt="">
+    <a href="#" class ="navbar-brand text-dark"></a>
+     
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -57,14 +62,17 @@
                 <button class="btn btn-custom1 btn-lg font-weight-bold dropdown-toggle" id="newMeetingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Start a Meeting
                 </button>
+
             </li>
         </ul>            
     </div>
    </nav>
    <main>
+
     <div class="jumbotron h-100 d-flex" style="background-image: url('./public/Assets/images/Frame 1.png'); background-size: contain;">
         <div class="container w-50">
             <h3 style="padding-top: 30px">Video calls so smooth, they're practically magic.</h3>
+          
             <div class="wrapper">
              <div class="static-txt">It's Portal for</div>
              <ul class="dynamic-txts">
@@ -74,6 +82,7 @@
                  <li><span>YOU!</span></li>
              </ul>
              </div>
+
            <p style="color: #93969b">
             Forget the clicks, gesture controls will help you to feel the flow.
             Point, pinch, and connect. We make video calling as natural as waving.
@@ -95,10 +104,12 @@
                     <input type="text" placeholder="Enter a Code" class="enter-code">
                 </button>
             </li>
+         
             <li class="pl-4 font-weight-bold text-dark cursor-pointer pl-2 join-action">Join</li>
            </ul>
         </div>
         <div class="container w-50">
+
             <img src="./public/Assets/images/network.png.rm.png" class="signin-image" alt="pic">
         </div>
     </div>    
@@ -150,6 +161,7 @@
 
     // Redirect to the sign-in page
     const signInButton = document.querySelector('#sign-in');
+          
     signInButton.addEventListener('click', (event) => {
         event.preventDefault();  // Prevent default form submission
         window.location.href = 'sign-up.html';  
@@ -159,3 +171,4 @@
 
 </body>
 </html>
+
