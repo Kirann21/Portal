@@ -1,3 +1,17 @@
+let Myapp = (function(){
+  function init(vid,mid){
+
+  }
+  return{
+    _init: function(vid,mid){
+      init(vid,mid)
+    },  
+  };
+})
+
+
+
+
 var AppProcess = (function () {
   var peers_connection_ids = [];
   var peers_connection = [];

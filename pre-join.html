@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Meeting</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
+  <link rel="stylesheet" href="./public/Assets/css/style.css"> <!-- External CSS -->
+  <script src="./public/Assets/js/jquery-3.4.1.min.js"></script>
+  <style>
+   body {
+      background-image: url('./public/Assets/images/Frame 1.png'); /* Correct relative path */
+   }
+    .error-message {
+      color: #ffe6d6;
+      margin-top: 10px;
+    }
+    .join-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+     /* Dark background */
+    }
+    .join-card {
+      background-color:#fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 320px;
+    }
+    .join-card h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .join-card p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+    #user_id_input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    #join_now_button {
+      background-color: rgba(31, 47, 106, 1);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    #join_now_button:hover {
+      background-color:rgba(139, 155, 215, 1);
+    }
+  </style>
+</head>
+<body> 
+  <div class="join-page">
+    <div class="join-card">
+      <h1>Join Meeting</h1>
+      <p id="user_id_prompt">Enter your User ID to join the meeting</p>
+      
+      <input type="text" id="user_id_input" placeholder="Enter your User ID" required>
+      
+      <button id="join_now_button">Join Now</button>
+      <p class="error-message" id="error_message"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('join_now_button').addEventListener('click', function() {
+      let user_id = document.getElementById('user_id_input').value.trim();
+      const url_params = new URLSearchParams(window.location.search);
+      let meeting_id = url_params.get('meetingID');
+      let error_message = document.getElementById('error_message');
+      
+      if (user_id && meeting_id) {
+        // Redirect to action.html with user_id and meeting_id as parameters
+        let action_url = `index.html?userID=${encodeURIComponent(user_id)}&meetingID=${encodeURIComponent(meeting_id)}`;
+        window.open(action_url, '_blank'); // Open in a new tab
+      } else {
+        // Update the message to inform the user to enter a valid User ID
+        error_message.textContent = "Enter a valid User ID";
+      }
+    });
+  </script>
+</body>
+</html>
