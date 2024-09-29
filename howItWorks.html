@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know the Gestures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        body {
+            background-image: url('./public/Assets/images/Frame 1.png');
+            background-size: contain;
+            background-color: rgba(241, 240, 254, 1);
+            padding: 20px;
+            font-family: 'Poppins', sans-serif !important;
+            font-size:medium;
+
+        }
+
+        h1 {
+            color: rgba(31, 47, 106, 1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gesture-card {
+            background-color: rgba(130, 151, 206, 1);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(138, 162, 227, 0.97);
+            padding: 10px;
+            margin: 10px;
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            height: 80px; /* Fixed height */
+        }
+
+        .gesture-image {
+            width: 40px; /* Smaller image size */
+            height: 40px; /* Smaller image size */
+            margin-right: 15px; /* Space between image and text */
+        }
+
+        .card-container {
+            display: grid; /* Using CSS Grid for layout */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between items */
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Know the Gestures</h1>
+        <div class="card-container">
+            <div class="gesture-card">
+                <img src="path/to/image1.png" alt="Hand Signal" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Hand Signal</h5>
+                    <p>Take a snapshot of the entire screen.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image2.png" alt="Thumbs Up" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Thumbs Up</h5>
+                    <p>Switch on the camera.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image3.png" alt="Thumbs Down" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Thumbs Down</h5>
+                    <p>Switch off the camera.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image4.png" alt="Sign to Mute Mic" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Sign to Mute Mic</h5>
+                    <p>Mute your microphone.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image5.png" alt="Sign to Unmute Mic" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Sign to Unmute Mic</h5>
+                    <p>Unmute your microphone.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image6.png" alt="Sign to Increase Volume" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Sign to Increase Volume</h5>
+                    <p>Increase the volume.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image7.png" alt="Sign to Decrease Volume" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Sign to Decrease Volume</h5>
+                    <p>Decrease the volume.</p>
+                </div>
+            </div>
+            <div class="gesture-card">
+                <img src="path/to/image8.png" alt="Sign to Start Presenting" class="gesture-image">
+                <div>
+                    <h5 style="padding-top: 10px;">Sign to Start Presenting</h5>
+                    <p>Start presenting your screen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

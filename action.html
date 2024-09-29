@@ -41,7 +41,7 @@
                 <a href="#" class="nav-link">At a glance</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">How it works</a>
+                <a href="#" class="nav-link">Policy</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">Plan and Price</a>
@@ -52,11 +52,11 @@
                 <a href="#" class="nav-link" id="sign-in">Sign in</a>
             </li>
             <li class="nav-item">
-               <button class="btn btn-outline-secondary btn-lg text-custom font-weight-bold join-meeting">Join the meeting</button>     
+               <button class="btn btn-outline-secondary btn-lg text-custom font-weight-bold join-meeting">Join Meeting</button>     
             </li>
-            <li class="nav-item dropdown">
-                <button class="btn btn-custom1 btn-lg font-weight-bold dropdown-toggle" id="newMeetingDropdownNavbar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Start a Meeting
+            <li class="nav-item">
+                <button class="btn btn-custom1 btn-lg" id="know-gestures">
+                    Know the gestures
                 </button>
                 <div class="dropdown-menu" aria-labelledby="newMeetingDropdownNavbar">
                     <a class="dropdown-item create-later" href="#"><i class="fa-solid fa-link"></i>Create a meeting</a>
@@ -165,6 +165,12 @@
         window.location.href = 'sign-up.html';  
     });
   });
+
+document.querySelector("#know-gestures").
+addEventListener('click',function(){
+    window.open('./howItWorks.html', '_blank');
+})
+
   </script>
 
 </body>
