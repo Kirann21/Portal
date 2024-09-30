@@ -1,0 +1,5 @@
+.headerr{
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-around;
+}
