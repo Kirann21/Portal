@@ -422,7 +422,7 @@ var MyApp = (function () {
       var added_mar = num_of_att * 10;
       var mar_top = "-" + (135 + added_mar);
       $(".g-details").css({ "margin-top": mar_top });
-
+      
       var time = new Date();
       var lTime = time.toLocaleString("en-US", {
         hour: "numeric",
